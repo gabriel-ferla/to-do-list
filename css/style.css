@@ -43,7 +43,8 @@ button i {
     pointer-events: none; /* Remove o evento de clique do icone que está acima do botão, assim clicando no botão/icone o evento será disparado */
 }
 
-input, select {
+input, 
+select {
     padding: 0.25rem 0.5rem;
 }
 
@@ -68,7 +69,8 @@ input, select {
 }
 
 /* To do Form */
-#todo-form, #edit-form {
+#todo-form,
+#edit-form {
     padding: 1rem;
     border-bottom: 1px solid #CCC;
 }
@@ -91,6 +93,18 @@ input, select {
     margin-top: 1rem;
 }
 
+#todo-form input {
+    height: 34px;
+    width: 100%;
+    border: 1px solid black;
+}
+
+#edit-form input {
+    height: 20px;
+    width: 100%;
+    border: 1px solid black;
+}
+
 /* To do toolbar */
 
 #toolbar {
@@ -99,11 +113,25 @@ input, select {
     display: flex;
 }
 
-#tollbar h4 {
-    margin-bottom: .5rem;
+#toolbar h4 {
+    margin-bottom: 1rem;
 }
 
-#search, {
+#toolbar input {
+    height: 34px;
+    width: 100%;
+    border: 1px solid black;
+    margin: auto;
+}
+
+#toolbar select {
+    height: 34px;
+    width: 100%;
+    border: 1px solid black;
+    margin: auto;
+}
+
+#search {
     border-right: 1px solid #ddd;
     padding-right: 1rem;
     margin-right: 1rem;
@@ -128,11 +156,13 @@ input, select {
 }
 
 /* to do list */
+
 .todo {
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 1rem;
+    margin-top: 1rem;
     border-bottom: 1px solid #ddd;
     transition: .3s;
 }
@@ -143,7 +173,7 @@ input, select {
 }
 
 .todo button {
-    margin-left: 0.4rem;
+    margin-left: .4rem;
 }
 
 .done {
