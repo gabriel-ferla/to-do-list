@@ -35,6 +35,15 @@ const saveTodo = (text) => {
     todoInput.value = ""
     todoInput.focus()
 }
+
+//esconde formulário e abre o de edição da tarefa
+
+const toggleForms = () => {
+    editForm.classList.toggle("hide")
+    todoForm.classList.toggle("hide")
+    todoList.classList.toggle("hide")
+  }
+
 // Eventos
 todoForm.addEventListener("submit", (e) => {
    
@@ -46,3 +55,34 @@ todoForm.addEventListener("submit", (e) => {
         saveTodo(inputValue)
     }
 })
+
+
+document.addEventListener("click", (e) => {
+    const targetEl = e.target
+    const parentEl = targetEl.closest("div") // seleciona a div mais próxima do parent = (Botão clicado), no caso (todo done)
+
+    //definir a tarefa como completa
+
+    if(targetEl.classList.contains("finish-todo")) {
+        parentEl.classList.toggle("done")
+    }
+
+    //remover tarefa
+
+    if(targetEl.classList.contains("remove-todo")) {
+        parentEl.remove()
+    }
+
+    //editar tarefa
+
+    if(targetEl.classList.contains("edit-todo")) {
+        toggleForms()
+    }
+})
+
+    //Cancelar edição
+
+    cancelEditBtn.addEventListener("click", (e) => {
+        e.preventDefault()
+        toggleForms()
+    })
