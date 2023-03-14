@@ -100,7 +100,7 @@ select {
 }
 
 #edit-form input {
-    height: 20px;
+    height: 34px;
     width: 100%;
     border: 1px solid black;
 }
